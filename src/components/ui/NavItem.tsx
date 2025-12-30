@@ -16,7 +16,7 @@ export default function NavItem({
           ${
             isActive
               ? "text-white bg-red-500 dark:bg-cyan-500"
-              : "text-slate-600 dark:text-gray-300 hover:bg-red-500/10 dark:hover:bg-cyan-500/10"
+              : "hover:bg-red-500/10 dark:hover:bg-cyan-500/10"
           }`
         }
       >

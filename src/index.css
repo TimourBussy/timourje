@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :is(a, button, input, textarea, select, [tabindex]):focus-visible {
     outline: 2px solid white;
@@ -8,12 +10,10 @@
   }
 }
 
-body {
+html {
   background: linear-gradient(to bottom right, #fffefe 0%, #fef2f2 50%, #fdf2f8 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(to bottom right, #121829 0%, #1e193b 50%, #112334 100%);
-  }
+html.dark {
+  background: linear-gradient(to bottom right, #121829 0%, #1e193b 50%, #112334 100%);
 }

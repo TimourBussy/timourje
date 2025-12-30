@@ -1,8 +1,15 @@
+import Heading from "../components/ui/Heading";
+import Paragraph from "../components/ui/Paragraph";
+
 export default function Home() {
   return (
-    <main className="p-8">
-      <h1 className="text-2xl font-bold">Accueil</h1>
-      <p>Contenu de la page d'accueil.</p>
-    </main>
+    <>
+      <Heading level={1} variant="soft" className="mt-7">
+        Timour Jbanov--Emorine
+      </Heading>
+      <Paragraph size="big">
+        Bienvenue sur le site du développeur full-stack Timour Jbanov--Emorine !
+      </Paragraph>
+    </>
   );
 }
