@@ -3,7 +3,7 @@ import { tv } from "tailwind-variants";
 const paragraphStyles = tv({
   variants: {
     size: {
-      big: "text-lg",
+      big: "text-xl",
       small: "text-sm",
     },
   },
@@ -12,12 +12,14 @@ const paragraphStyles = tv({
   },
 });
 
-export default function Heading({
+export default function Paragraph({
   size,
+  className,
   children,
 }: {
   size: "big" | "small";
+  className?: string;
   children: React.ReactNode;
 }) {
-  return <p className={paragraphStyles({ size })}>{children}</p>;
+  return <p className={paragraphStyles({ size, className })}>{children}</p>;
 }

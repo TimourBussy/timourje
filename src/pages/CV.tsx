@@ -1,8 +1,11 @@
-export default function CV() {
+import Heading from "../components/ui/Heading";
+
+export default function CV({ lang }: { lang: "FR" | "EN" }) {
   return (
-    <main className="p-8">
-      <h1 className="text-2xl font-bold">CV</h1>
-      <p>Contenu du CV.</p>
-    </main>
+    <>
+      <Heading level={3} variant="soft" className="mt-7">
+        CV
+      </Heading>
+    </>
   );
 }

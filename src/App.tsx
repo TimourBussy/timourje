@@ -1,27 +1,49 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import CV from "./pages/CV";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
-import Header from "./components/sections/Header";
+import Header from "./components/layout/Header";
 
 export default function App() {
   const [lang, setLang] = useState<"FR" | "EN">("FR");
-  const toggleLang = () => {
-    setLang((prev) => (prev === "FR" ? "EN" : "FR"));
+  const toggleLang = () => setLang((l) => (l === "FR" ? "EN" : "FR"));
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const initialTheme = savedTheme
+      ? savedTheme === "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setIsDark(initialTheme);
+    document.documentElement.classList.toggle("dark", initialTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDark((prev) => {
+      const next = !prev;
+      localStorage.setItem("theme", next ? "dark" : "light");
+      document.documentElement.classList.toggle("dark", next);
+      return next;
+    });
   };
 
   return (
     <>
-      <Header lang={lang} toggleLang={toggleLang} />
+      <Header
+        lang={lang}
+        toggleLang={toggleLang}
+        isDark={isDark}
+        toggleTheme={toggleTheme}
+      />
 
       <main className="flex flex-col items-center">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cv" element={<CV />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<Home lang={lang} />} />
+          <Route path="/cv" element={<CV lang={lang} />} />
+          <Route path="/portfolio" element={<Portfolio lang={lang} />} />
+          <Route path="/contact" element={<Contact lang={lang} />} />
         </Routes>
       </main>
     </>

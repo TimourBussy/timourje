@@ -1,8 +1,11 @@
-export default function Portfolio() {
+import Heading from "../components/ui/Heading";
+
+export default function Portfolio({ lang }: { lang: "FR" | "EN" }) {
   return (
-    <main className="p-8">
-      <h1 className="text-2xl font-bold">Portfolio</h1>
-      <p>Contenu du portfolio.</p>
-    </main>
+    <>
+      <Heading level={3} variant="soft" className="mt-7">
+        Portfolio
+      </Heading>
+    </>
   );
 }

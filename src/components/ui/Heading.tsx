@@ -26,7 +26,7 @@ export default function Heading({
   className,
   children,
 }: {
-  level: 1 | 2;
+  level: 1 | 2 | 3;
   variant?: "vibrant" | "soft" | "plain";
   className?: string;
   children: React.ReactNode;
