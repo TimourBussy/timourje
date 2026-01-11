@@ -12,7 +12,7 @@ export default function NavItem({
       <NavLink
         to={to}
         className={({ isActive }) =>
-          `px-4 py-2.5 rounded-xl transition-all duration-150
+          `px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-xl transition-all duration-150 text-[0.8rem] sm:text-sm md:text-base
           ${
             isActive
               ? "text-white bg-red-500 dark:bg-cyan-500"

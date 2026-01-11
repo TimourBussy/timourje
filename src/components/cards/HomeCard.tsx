@@ -13,12 +13,31 @@ export function HomeCard({
   description: string;
 }) {
   return (
-    <Card className="p-6 relative overflow-hidden">
-      <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full opacity-20" />
+    <Card
+      className="
+        p-8 lg:w-108 relative h-full hover:shadow-2xl hover:-translate-y-2
+        shadow-red-500/20
+        dark:shadow-cyan-400/20"
+    >
+      <div
+        className="
+          absolute top-0 right-0 w-32 h-32 rounded-bl-full bg-gradient-to-br
+          from-red-500/10 to-red-500/0
+          dark:from-cyan-400/10 dark:to-cyan-400/0"
+      />
 
       <div className="relative">
-        <IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
+        <IconWrapper decoration={iconDecoration} className="mb-3">
+          {icon}
+        </IconWrapper>
+        <h3
+          className="
+            text-3xl font-bold mb-2
+            text-black
+            dark:text-white"
+        >
+          {title}
+        </h3>
         <p className="text-gray-600 dark:text-gray-300">{description}</p>
       </div>
     </Card>

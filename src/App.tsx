@@ -9,16 +9,19 @@ import Header from "./components/layout/Header";
 export default function App() {
   const [lang, setLang] = useState<"FR" | "EN">("FR");
   const toggleLang = () => setLang((l) => (l === "FR" ? "EN" : "FR"));
-  const [isDark, setIsDark] = useState(false);
 
-  useEffect(() => {
+  const getInitialTheme = () => {
     const savedTheme = localStorage.getItem("theme");
-    const initialTheme = savedTheme
+    return savedTheme
       ? savedTheme === "dark"
       : window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setIsDark(initialTheme);
-    document.documentElement.classList.toggle("dark", initialTheme);
-  }, []);
+  };
+
+  const [isDark, setIsDark] = useState(getInitialTheme);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDark);
+  }, [isDark]);
 
   const toggleTheme = () => {
     setIsDark((prev) => {

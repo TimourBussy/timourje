@@ -4,7 +4,7 @@ const headingStyles = tv({
   base: "font-bold",
   variants: {
     level: {
-      1: "text-6xl",
+      1: "text-4xl sm:text-5xl md:text-6xl",
       2: "text-xl",
       3: "text-5xl",
     },
