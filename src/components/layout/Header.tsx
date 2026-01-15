@@ -16,11 +16,11 @@ export function Header({
 	return (
 		<header
 			className="
-        sticky top-0 z-10 mb-12 border-b
-        bg-white border-rose-200
-        dark:bg-gradient-to-r dark:from-gray-900 dark:to-slate-900 dark:border-sky-950"
+				sticky top-0 z-100 mb-12 border-b
+				bg-white border-rose-200
+				dark:bg-gradient-to-r dark:from-gray-900 dark:to-slate-900 dark:border-sky-950"
 		>
-			<div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-85 py-6 lg:py-0.75 flex flex-col lg:flex-row items-center lg:justify-between">
+			<div className="px-4 md:px-8 lg:px-16 xl:px-36 py-6 lg:py-0.75 flex flex-col lg:flex-row items-center lg:justify-between">
 				<a
 					href="/"
 					className="rounded-xs mb-5 lg:mb-0 transition-all hover:scale-105"
@@ -41,9 +41,9 @@ export function Header({
 
 				<ul
 					className="
-            relative flex items-center justify-center space-x-2 lg:ml-10 lg:pl-4 lg:border-l
-            border-rose-200
-            dark:border-sky-950"
+						relative flex items-center justify-center space-x-2 lg:ml-10 lg:pl-4 lg:border-l
+						border-rose-200
+						dark:border-sky-950"
 				>
 					<li>
 						<HeaderAction onClick={toggleLang}>
@@ -55,7 +55,7 @@ export function Header({
 							>
 								<path d="m476-80 182-480h84L924-80h-84l-43-122H603L560-80h-84ZM160-200l-56-56 202-202q-35-35-63.5-80T190-640h84q20 39 40 68t48 58q33-33 68.5-92.5T484-720H40v-80h280v-80h80v80h280v80H564q-21 72-63 148t-83 116l96 98-30 82-122-125-202 201Zm468-72h144l-72-204-72 204Z" />
 							</svg>
-							<span className="text-[0.65rem] sm:text-xs md:text-sm font-medium">
+							<span className="font-medium text-[0.65rem] sm:text-xs md:text-sm">
 								{lang === "FR" ? "FR" : "EN"}
 							</span>
 						</HeaderAction>

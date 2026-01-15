@@ -1,5 +1,7 @@
 import { Card } from "../ui/Card";
+import { Heading } from "../ui/Heading";
 import { type IconDecoration, IconWrapper } from "../ui/IconWrapper";
+import { Paragraph } from "../ui/Paragraph";
 
 export function HomeCard({
 	icon,
@@ -30,21 +32,10 @@ export function HomeCard({
 				<IconWrapper decoration={iconDecoration} className="mb-5">
 					{icon}
 				</IconWrapper>
-				<h3
-					className="
-						text-3xl font-bold mb-2
-						text-black
-						dark:text-white"
-				>
+				<Heading level={3} className="text-3xl mb-2">
 					{title}
-				</h3>
-				<p
-					className="
-						text-gray-600
-						dark:text-gray-300"
-				>
-					{description}
-				</p>
+				</Heading>
+				<Paragraph size="small">{description}</Paragraph>
 			</div>
 		</Card>
 	);

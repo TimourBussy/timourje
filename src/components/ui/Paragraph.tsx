@@ -4,7 +4,7 @@ const paragraphStyles = tv({
 	variants: {
 		size: {
 			big: "text-xl",
-			small: "text-sm",
+			small: "text-md",
 		},
 	},
 	defaultVariants: {
