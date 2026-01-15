@@ -32,7 +32,7 @@ export function HomeCard({
 				<IconWrapper decoration={iconDecoration} className="mb-5">
 					{icon}
 				</IconWrapper>
-				<Heading level={3} className="text-3xl mb-2">
+				<Heading level={3} className="text-3xl mb-2 text-left">
 					{title}
 				</Heading>
 				<Paragraph size="small">{description}</Paragraph>
