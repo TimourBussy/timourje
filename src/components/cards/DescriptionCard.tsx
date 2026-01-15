@@ -21,7 +21,12 @@ export function DescriptionCard({
 	return (
 		<Card>
 			<div className="relative">
-				<CardHeader icon={icon} iconDecoration={iconDecoration} title={title} />
+				<CardHeader
+					icon={icon}
+					iconDecoration={iconDecoration}
+					title={title}
+					className="mb-2"
+				/>
 				{descriptionArray.map((paragraph, index) => (
 					<Paragraph
 						key={index}

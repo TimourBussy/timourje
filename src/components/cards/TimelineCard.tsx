@@ -25,7 +25,12 @@ export function TimelineCard({
 	return (
 		<Card>
 			<div className="relative">
-				<CardHeader icon={icon} iconDecoration={iconDecoration} title={title} />
+				<CardHeader
+					icon={icon}
+					iconDecoration={iconDecoration}
+					title={title}
+					className="mb-2"
+				/>
 				<div className="space-y-6 mt-5 ml-1.5">
 					{[...entries].reverse().map((entry, index) => (
 						<article

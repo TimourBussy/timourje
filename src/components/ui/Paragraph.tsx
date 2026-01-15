@@ -3,7 +3,7 @@ import { tv } from "tailwind-variants";
 const paragraphStyles = tv({
 	variants: {
 		size: {
-			big: "text-xl",
+			big: "text-lg",
 			small: "text-md",
 		},
 	},

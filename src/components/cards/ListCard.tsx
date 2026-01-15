@@ -35,7 +35,12 @@ export function ListCard({
 	return (
 		<Card>
 			<div className="relative w-full">
-				<CardHeader icon={icon} iconDecoration={iconDecoration} title={title} />
+				<CardHeader
+					icon={icon}
+					iconDecoration={iconDecoration}
+					title={title}
+					className="mb-2"
+				/>
 				<ul className={listGridStyles({ cols })}>
 					{listItems.map((item, index) => (
 						<ListItem key={index}>{item}</ListItem>
