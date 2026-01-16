@@ -1,7 +1,7 @@
 import { Card } from "../ui/Card";
-import { CardHeader } from "../ui/CardHeader";
+import { Heading } from "../ui/Heading";
 import { ListItem } from "../ui/ListItem";
-import { type IconDecoration } from "../ui/IconWrapper";
+import { IconWrapper, type IconDecoration } from "../ui/IconWrapper";
 import { tv } from "tailwind-variants";
 
 const listGridStyles = tv({
@@ -26,8 +26,8 @@ export function ListCard({
 	listItems,
 	cols,
 }: {
-	icon: React.ReactNode;
-	iconDecoration: IconDecoration;
+	icon?: React.ReactNode;
+	iconDecoration?: IconDecoration;
 	title: string;
 	listItems: string[] | string[][];
 	cols?: 1 | 2 | 3 | 4;
@@ -35,12 +35,12 @@ export function ListCard({
 	return (
 		<Card>
 			<div className="relative w-full">
-				<CardHeader
-					icon={icon}
-					iconDecoration={iconDecoration}
-					title={title}
-					className="mb-2"
-				/>
+				<div className="flex items-center mb-2">
+					{icon && iconDecoration && (
+						<IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
+					)}
+					<Heading level={3}>{title}</Heading>
+				</div>
 				<ul className={listGridStyles({ cols })}>
 					{listItems.map((item, index) => (
 						<ListItem key={index}>{item}</ListItem>

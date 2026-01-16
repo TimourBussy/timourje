@@ -9,15 +9,15 @@ export function HomeCard({
 	title,
 	description,
 }: {
-	icon: React.ReactNode;
-	iconDecoration: IconDecoration;
+	icon?: React.ReactNode;
+	iconDecoration?: IconDecoration;
 	title: string;
 	description: string;
 }) {
 	return (
 		<Card
 			className="
-				lg:w-108 relative h-full hover:shadow-2xl hover:-translate-y-2
+				lg:w-md relative h-full hover:shadow-2xl hover:-translate-y-2
 				shadow-red-500/20
 				dark:shadow-cyan-500/20"
 		>
@@ -29,10 +29,10 @@ export function HomeCard({
 			/>
 
 			<div className="relative">
-				<IconWrapper decoration={iconDecoration} className="mb-5">
-					{icon}
-				</IconWrapper>
-				<Heading level={3} className="text-3xl mb-2 text-left">
+				{icon && iconDecoration && (
+					<IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
+				)}
+				<Heading level={2} className="text-3xl mb-2 text-left">
 					{title}
 				</Heading>
 				<Paragraph size="small">{description}</Paragraph>

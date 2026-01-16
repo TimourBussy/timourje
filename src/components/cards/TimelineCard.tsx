@@ -1,7 +1,6 @@
 import { Card } from "../ui/Card";
-import { CardHeader } from "../ui/CardHeader";
 import { Heading } from "../ui/Heading";
-import { type IconDecoration } from "../ui/IconWrapper";
+import { IconWrapper, type IconDecoration } from "../ui/IconWrapper";
 import { Paragraph } from "../ui/Paragraph";
 
 type TimelineEntry = {
@@ -17,20 +16,20 @@ export function TimelineCard({
 	title,
 	entries,
 }: {
-	icon: React.ReactNode;
-	iconDecoration: IconDecoration;
+	icon?: React.ReactNode;
+	iconDecoration?: IconDecoration;
 	title: string;
 	entries: TimelineEntry[];
 }) {
 	return (
 		<Card>
 			<div className="relative">
-				<CardHeader
-					icon={icon}
-					iconDecoration={iconDecoration}
-					title={title}
-					className="mb-2"
-				/>
+				<div className="flex items-center mb-2">
+					{icon && iconDecoration && (
+						<IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
+					)}
+					<Heading level={3}>{title}</Heading>
+				</div>
 				<div className="space-y-6 mt-5 ml-1.5">
 					{[...entries].reverse().map((entry, index) => (
 						<article

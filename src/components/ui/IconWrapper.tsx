@@ -45,7 +45,7 @@ const iconChildStyles = tv({
 			hexagon: "w-7 h-7",
 			beatingCircle: "w-6 h-6",
 			dashedCircle: "w-9 h-9",
-			outlinedDiamond: "",
+			outlinedDiamond: "w-7 h-7",
 			miniBeatingCircle: "",
 		},
 	},
@@ -237,6 +237,20 @@ export function IconWrapper({
 							bg-red-500/10
 							dark:bg-cyan-500/10"
 					/>
+					<div className={iconChildStyles({ decoration })}>{children}</div>
+				</>
+			)}
+
+			{decoration === "outlinedDiamond" && (
+				<>
+					<div className="absolute inset-0 flex items-center justify-center">
+						<div
+							className="
+								w-12 h-12 rotate-45 border-2
+								border-pink-500
+								dark:border-purple-500"
+						/>
+					</div>
 					<div className={iconChildStyles({ decoration })}>{children}</div>
 				</>
 			)}

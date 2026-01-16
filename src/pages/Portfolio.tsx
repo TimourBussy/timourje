@@ -6,16 +6,16 @@ import { projects } from "../data/projects";
 export function Portfolio({ lang }: { lang: "FR" | "EN" }) {
 	return (
 		<>
-			<Heading level={3} variant="soft" className="mb-4">
+			<Heading level={2} variant="gradient">
 				Portfolio
 			</Heading>
-			<Paragraph size="big" className="mb-4">
+			<Paragraph size="big" className="my-4">
 				{lang === "FR"
 					? "Découvrez mes projets et réalisations"
 					: "Discover my projects and achievements"}
 			</Paragraph>
 
-			<div className="flex flex-col gap-6 mt-8 mx-55">
+			<div className="flex flex-col gap-6 mt-8 mb-12 mx-4 sm:mx-16 md:mx-32 lg:mx-55">
 				{projects.map((project, index) => {
 					const title =
 						typeof project.title === "string"

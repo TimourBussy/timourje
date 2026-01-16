@@ -5,19 +5,15 @@ const headingStyles = tv({
 	variants: {
 		level: {
 			1: "text-4xl sm:text-5xl md:text-6xl text-center",
-			2: "text-xl",
-			3: "text-5xl text-center",
+			2: "text-5xl text-center",
+			3: "text-3xl",
 			4: "text-xl",
 		},
 		variant: {
-			vibrant: `
+			gradient: `
 				bg-gradient-to-r bg-clip-text text-transparent
-				from-red-600 to-pink-600
-				dark:from-cyan-500 dark:to-purple-500`,
-			soft: `
-				bg-gradient-to-r bg-clip-text text-transparent
-				from-rose-600 to-fuchsia-600
-				dark:from-blue-300 dark:to-fuchsia-400`,
+				from-rose-600 to-fuchsia-700
+				dark:from-indigo-300 dark:to-purple-400`,
 			plain: `
 				text:black
 				dark:text-white`,
@@ -35,7 +31,7 @@ export function Heading({
 	children,
 }: {
 	level: 1 | 2 | 3 | 4;
-	variant?: "vibrant" | "soft" | "plain";
+	variant?: "gradient" | "plain";
 	className?: string;
 	children: React.ReactNode;
 }) {
