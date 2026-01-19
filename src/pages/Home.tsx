@@ -7,14 +7,14 @@ import BriefcaseIcon from "../assets/icons/briefcase.svg?react";
 export function Home({ lang }: { lang: "FR" | "EN" }) {
 	return (
 		<>
-			<Heading level={2} variant="gradient" className="lg:mt-7 mb-4 mx-8">
+			<Heading level={1} variant="gradient" className="lg:mt-7 mb-4 mx-8">
 				Timour <span className="whitespace-nowrap">Jbanov--Emorine</span>
 			</Heading>
 			<Paragraph size="big" className="mb-16">
 				{lang === "FR" ? "Développeur Full Stack" : "Full Stack Developer"}
 			</Paragraph>
 
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-md md:max-w-5xl mx-auto px-6">
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-md md:max-w-5xl px-4 grid-rows-2 md:grid-rows-1 mb-14 box-border">
 				<a href="CV">
 					<HomeCard
 						icon={<DocumentIcon height="28px" />}
@@ -31,7 +31,7 @@ export function Home({ lang }: { lang: "FR" | "EN" }) {
 				<a href="Portfolio">
 					<HomeCard
 						icon={<BriefcaseIcon height="36px" />}
-						iconDecoration="HaloSquare"
+						iconDecoration="haloSquare"
 						title="Portfolio"
 						description={
 							lang === "FR"

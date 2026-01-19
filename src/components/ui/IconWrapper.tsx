@@ -2,7 +2,7 @@ import { tv } from "tailwind-variants";
 
 export type IconDecoration =
 	| "circles"
-	| "HaloSquare"
+	| "haloSquare"
 	| "filledDiamond"
 	| "glitchedSquare"
 	| "hexagon"
@@ -12,40 +12,40 @@ export type IconDecoration =
 	| "miniBeatingCircle";
 
 const iconWrapperStyles = tv({
-	base: "relative flex items-center justify-center w-16 h-16 text-red-500 dark:text-cyan-500 transition-all",
+	base: "relative flex items-center justify-center min-w-16 min-h-16 text-red-500 dark:text-cyan-500 transition-all",
 	variants: {
 		decoration: {
 			circles: "",
-			HaloSquare: `
-				border-2
-				border-red-500
-				dark:border-cyan-500`,
+			haloSquare: `
+			 border-2
+			 border-red-500
+			 dark:border-cyan-500`,
 			filledDiamond: `
-				mr-1
-				text-white
-				dark:text-white`,
-			glitchedSquare: "mr-3 w-12 h-12",
+			 mr-1
+			 text-white
+			 dark:text-white`,
+			glitchedSquare: "mr-3 min-w-12 min-h-12",
 			hexagon: "mr-1.5",
-			beatingCircle: "mr-3 w-12 h-12",
-			dashedCircle: "mr-3 w-13 h-13",
-			outlinedDiamond: "",
-			miniBeatingCircle: "",
+			beatingCircle: "mr-3 min-w-12 min-h-12",
+			dashedCircle: "mr-3 min-w-13 min-h-13",
+			outlinedDiamond: "mr-2",
+			miniBeatingCircle: "mr-2",
 		},
 	},
 });
 
 const iconChildStyles = tv({
-	base: "relative z-10",
+	base: "relative z-10 w-7 h-7",
 	variants: {
 		decoration: {
-			circles: "",
-			HaloSquare: "transition-transform group-hover:rotate-12",
-			filledDiamond: "w-7 h-7",
-			glitchedSquare: "w-7 h-7",
-			hexagon: "w-7 h-7",
+			circles: "transition-transform group-hover:scale-110",
+			haloSquare: "w-auto h-auto transition-transform group-hover:rotate-12",
+			filledDiamond: "",
+			glitchedSquare: "",
+			hexagon: "",
 			beatingCircle: "w-6 h-6",
 			dashedCircle: "w-9 h-9",
-			outlinedDiamond: "w-7 h-7",
+			outlinedDiamond: "",
 			miniBeatingCircle: "",
 		},
 	},
@@ -72,24 +72,20 @@ export function IconWrapper({
 					/>
 					<span
 						className="
-							absolute inset-2 rounded-full border-2 opacity-50
-							border-red-500
-							dark:border-cyan-500"
+							absolute inset-2 rounded-full border-2
+							border-red-500/50
+							dark:border-cyan-500/50"
 					/>
 					<div
 						className="
-							rounded-full p-0.5 transition-all
+							absolute inset-4 flex items-center justify-center rounded-full p-0.5 transition-all
 							bg-red-500/10 group-hover:bg-red-500/20
 							dark:bg-cyan-500/10 dark:group-hover:bg-cyan-500/20"
-					>
-						<div className="transition-transform group-hover:scale-110">
-							{children}
-						</div>
-					</div>
+					/>
 				</>
 			)}
 
-			{decoration === "HaloSquare" && (
+			{decoration === "haloSquare" && (
 				<>
 					<div className="absolute -inset-2 flex items-center justify-center pointer-events-none">
 						<div
@@ -105,7 +101,6 @@ export function IconWrapper({
 							bg-white
 							dark:bg-slate-800"
 					/>
-					<div className={iconChildStyles({ decoration })}>{children}</div>
 				</>
 			)}
 
@@ -125,7 +120,6 @@ export function IconWrapper({
 							bg-pink-600
 							dark:bg-purple-500"
 					/>
-					<div className={iconChildStyles({ decoration })}>{children}</div>
 				</>
 			)}
 
@@ -155,7 +149,6 @@ export function IconWrapper({
 							border-red-500
 							dark:border-cyan-500"
 					/>
-					<div className={iconChildStyles({ decoration })}>{children}</div>
 				</>
 			)}
 
@@ -164,11 +157,9 @@ export function IconWrapper({
 					<div className="absolute inset-0 flex items-center justify-center">
 						<svg
 							viewBox="0 0 100 100"
-							className="
-								w-13 h-13
-								[&_polygon]:fill-[url(#hexagonGradientLight)]
-								dark:[&_polygon]:fill-[url(#hexagonGradientDark)]"
+							className="w-full h-full max-w-full max-h-full aspect-square [&_polygon]:fill-[url(#hexagonGradientLight)] dark:[&_polygon]:fill-[url(#hexagonGradientDark)]"
 							xmlns="http://www.w3.org/2000/svg"
+							preserveAspectRatio="xMidYMid meet"
 						>
 							<defs>
 								<linearGradient
@@ -194,14 +185,10 @@ export function IconWrapper({
 							</defs>
 							<polygon
 								points="50,5 93,27.5 93,72.5 50,95 7,72.5 7,27.5"
-								className="
-									stroke-2
-									stroke-red-500
-									dark:stroke-cyan-500"
+								className="stroke-2 stroke-red-500 dark:stroke-cyan-500"
 							/>
 						</svg>
 					</div>
-					<div className={iconChildStyles({ decoration })}>{children}</div>
 				</>
 			)}
 
@@ -219,7 +206,6 @@ export function IconWrapper({
 							bg-red-500/25
 							dark:bg-cyan-500/25"
 					/>
-					<div className={iconChildStyles({ decoration })}>{children}</div>
 				</>
 			)}
 
@@ -237,23 +223,29 @@ export function IconWrapper({
 							bg-red-500/10
 							dark:bg-cyan-500/10"
 					/>
-					<div className={iconChildStyles({ decoration })}>{children}</div>
 				</>
 			)}
 
 			{decoration === "outlinedDiamond" && (
 				<>
 					<div className="absolute inset-0 flex items-center justify-center">
-						<div
-							className="
-								w-12 h-12 rotate-45 border-2
-								border-pink-500
-								dark:border-purple-500"
-						/>
+						<div className="w-12 h-12 rotate-45 border-2 border-pink-500 dark:border-purple-500" />
 					</div>
-					<div className={iconChildStyles({ decoration })}>{children}</div>
 				</>
 			)}
+
+			{decoration === "miniBeatingCircle" && (
+				<>
+					<div
+						className="
+							absolute top-4 right-4 w-1 h-1 rounded-full animate-[beat_2s_ease-in-out_infinite]
+							bg-pink-500
+							dark:bg-purple-500"
+					/>
+				</>
+			)}
+
+			<div className={iconChildStyles({ decoration })}>{children}</div>
 		</div>
 	);
 }

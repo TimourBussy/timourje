@@ -8,37 +8,32 @@ import { Header } from "./components/layout/Header";
 
 export default function App() {
 	const [lang, setLang] = useState<"FR" | "EN">("FR");
-	const toggleLang = () => setLang((l) => (l === "FR" ? "EN" : "FR"));
 
-	const getInitialTheme = () => {
+	const [isDark, setIsDark] = useState(() => {
 		const savedTheme = localStorage.getItem("theme");
 		return savedTheme
 			? savedTheme === "dark"
 			: window.matchMedia("(prefers-color-scheme: dark)").matches;
-	};
-
-	const [isDark, setIsDark] = useState(getInitialTheme);
+	});
 
 	useEffect(() => {
 		document.documentElement.classList.toggle("dark", isDark);
 	}, [isDark]);
 
-	const toggleTheme = () => {
-		setIsDark((prev) => {
-			const next = !prev;
-			localStorage.setItem("theme", next ? "dark" : "light");
-			document.documentElement.classList.toggle("dark", next);
-			return next;
-		});
-	};
-
 	return (
 		<>
 			<Header
 				lang={lang}
-				toggleLang={toggleLang}
+				toggleLang={() => setLang((l) => (l === "FR" ? "EN" : "FR"))}
 				isDark={isDark}
-				toggleTheme={toggleTheme}
+				toggleTheme={() => {
+					setIsDark((prev) => {
+						const next = !prev;
+						localStorage.setItem("theme", next ? "dark" : "light");
+						document.documentElement.classList.toggle("dark", next);
+						return next;
+					});
+				}}
 			/>
 
 			<main className="flex flex-col items-center">

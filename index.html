@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
@@ -19,7 +19,7 @@
 		<script>
 			const savedTheme = localStorage.getItem("theme");
 			const prefersDark = window.matchMedia(
-				"(prefers-color-scheme: dark)"
+				"(prefers-color-scheme: dark)",
 			).matches;
 			const isDark = savedTheme ? savedTheme === "dark" : prefersDark;
 			if (isDark) {
@@ -28,7 +28,7 @@
 		</script>
 	</head>
 
-	<body class="min-h-screen text-slate-600 dark:text-gray-300">
+	<body class="min-w-0 min-h-screen h-full text-slate-600 dark:text-gray-300">
 		<div id="root"></div>
 		<script type="module" src="/src/main.tsx"></script>
 	</body>

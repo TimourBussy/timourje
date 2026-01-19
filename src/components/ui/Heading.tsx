@@ -6,8 +6,9 @@ const headingStyles = tv({
 		level: {
 			1: "text-4xl sm:text-5xl md:text-6xl text-center",
 			2: "text-5xl text-center",
-			3: "text-3xl",
-			4: "text-xl",
+			3: "text-2xl sm:text-3xl",
+			4: "text-2xl",
+			5: "text-xl",
 		},
 		variant: {
 			gradient: `
@@ -30,7 +31,7 @@ export function Heading({
 	className,
 	children,
 }: {
-	level: 1 | 2 | 3 | 4;
+	level: 1 | 2 | 3 | 4 | 5;
 	variant?: "gradient" | "plain";
 	className?: string;
 	children: React.ReactNode;

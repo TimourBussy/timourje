@@ -23,23 +23,39 @@ export function DescriptionCard({
 	const isSmall = size === "small";
 
 	return (
-		<Card>
-			<div className={isSmall ? "flex items-start gap-4" : "relative"}>
-				{isSmall && icon && iconDecoration && (
-					<IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
-				)}
-				<div className={isSmall ? "flex-1" : ""}>
-					<div className={`flex items-center ${!isSmall ? "mb-2" : ""}`}>
-						{!isSmall && icon && iconDecoration && (
-							<IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
-						)}
-						<Heading level={!isSmall ? 3 : 4}>{title}</Heading>
+		<Card size={size}>
+			<div
+				className={
+					isSmall
+						? "flex flex-col items-center justify-center text-center md:text-left md:flex-row"
+						: "w-full"
+				}
+			>
+				{icon && iconDecoration && (
+					<div
+						className={`flex mb-2
+							${isSmall ? "justify-center md:items-center" : "items-center"}`}
+					>
+						<IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
+						{!isSmall && <Heading level={3}>{title}</Heading>}
 					</div>
+				)}
+				<div
+					className={isSmall ? "flex flex-col items-center w-full" : undefined}
+				>
+					{isSmall && (
+						<Heading level={5} className="text-center md:text-left w-full">
+							{title}
+						</Heading>
+					)}
 					{descriptionArray.map((paragraph, index) => (
 						<Paragraph
 							key={index}
 							size="small"
-							className={index < descriptionArray.length - 1 ? "mb-4" : ""}
+							className={`
+								${index < descriptionArray.length - 1 ? "mb-4" : ""}
+								${isSmall ? "w-full" : ""}
+							`}
 						>
 							{paragraph}
 						</Paragraph>

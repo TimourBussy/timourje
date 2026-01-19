@@ -35,9 +35,9 @@ export function TimelineCard({
 						<article
 							key={index}
 							className="
-								px-6 py-2 border-l-4
-								border-red-500 text-gray-600
-								dark:border-cyan-500 dark:text-gray-300"
+								   px-2 sm:px-6 py-2 border-l-4
+								   border-red-500 text-gray-600
+								   dark:border-cyan-500 dark:text-gray-300"
 						>
 							<div className="space-y-1">
 								<Heading level={4}>{entry.title}</Heading>

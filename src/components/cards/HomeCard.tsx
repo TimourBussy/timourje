@@ -28,11 +28,11 @@ export function HomeCard({
 					dark:from-cyan-500/10 dark:to-cyan-500/0"
 			/>
 
-			<div className="relative">
+			<div className="relative flex flex-col items-start w-auto">
 				{icon && iconDecoration && (
 					<IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
 				)}
-				<Heading level={2} className="text-3xl mb-2 text-left">
+				<Heading level={2} className="text-3xl mt-4 mb-2 text-left">
 					{title}
 				</Heading>
 				<Paragraph size="small">{description}</Paragraph>

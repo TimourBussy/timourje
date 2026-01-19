@@ -20,7 +20,8 @@ export function Header({
 			className="
 				sticky top-0 z-100 mb-12 border-b
 				bg-white border-rose-200
-				dark:bg-gradient-to-r dark:from-gray-900 dark:to-slate-900 dark:border-sky-950"
+				dark:bg-gradient-to-r dark:from-gray-900 dark:to-slate-900 dark:border-sky-950
+			"
 		>
 			<div className="px-4 md:px-8 lg:px-16 xl:px-36 py-6 lg:py-0.75 flex flex-col lg:flex-row items-center lg:justify-between">
 				<a
