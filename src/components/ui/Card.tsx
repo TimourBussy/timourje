@@ -1,4 +1,6 @@
-export function Card({
+import { Heading } from "./Heading";
+
+function Card({
 	size = "big",
 	className,
 	children,
@@ -25,3 +27,21 @@ export function Card({
 		</section>
 	);
 }
+
+const Title = ({ children }: { children: React.ReactNode }) => (
+	<Heading level={3}>{children}</Heading>
+);
+
+const Body = ({ children }: { children: React.ReactNode }) => (
+	<div>{children}</div>
+);
+
+const Icon = ({ children }: { children: React.ReactNode }) => (
+	<div>{children}</div>
+);
+
+Card.Title = Title;
+Card.Body = Body;
+Card.Icon = Icon;
+
+export { Card };

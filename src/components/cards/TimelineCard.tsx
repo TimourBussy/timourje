@@ -23,40 +23,44 @@ export function TimelineCard({
 }) {
 	return (
 		<Card>
-			<div className="relative">
-				<div className="flex items-center mb-2">
-					{icon && iconDecoration && (
-						<IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
-					)}
-					<Heading level={3}>{title}</Heading>
+			<Card.Body>
+				<div className="relative">
+					<div className="flex items-center mb-2">
+						{icon && iconDecoration && (
+							<Card.Icon>
+								<IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
+							</Card.Icon>
+						)}
+						<Card.Title>
+							<Heading level={3}>{title}</Heading>
+						</Card.Title>
+					</div>
+					<div className="space-y-6 mt-5 ml-1.5">
+						{[...entries].reverse().map((entry, index) => (
+							<article
+								key={index}
+								className="
+									px-2 sm:px-6 py-2 border-l-4
+									border-red-500 text-gray-600
+									dark:border-cyan-500 dark:text-gray-300"
+							>
+								<div className="space-y-1">
+									<Heading level={4}>{entry.title}</Heading>
+									<Paragraph
+										size="small"
+										className="text-red-600 dark:text-cyan-400"
+									>
+										{entry.organization} • {entry.period}
+									</Paragraph>
+									<Paragraph size="small" className="mt-2">
+										{entry.description}
+									</Paragraph>
+								</div>
+							</article>
+						))}
+					</div>
 				</div>
-				<div className="space-y-6 mt-5 ml-1.5">
-					{[...entries].reverse().map((entry, index) => (
-						<article
-							key={index}
-							className="
-								   px-2 sm:px-6 py-2 border-l-4
-								   border-red-500 text-gray-600
-								   dark:border-cyan-500 dark:text-gray-300"
-						>
-							<div className="space-y-1">
-								<Heading level={4}>{entry.title}</Heading>
-								<Paragraph
-									size="small"
-									className="
-                                    text-red-600
-                                    dark:text-cyan-400"
-								>
-									{entry.organization} • {entry.period}
-								</Paragraph>
-								<Paragraph size="small" className="mt-2">
-									{entry.description}
-								</Paragraph>
-							</div>
-						</article>
-					))}
-				</div>
-			</div>
+			</Card.Body>
 		</Card>
 	);
 }

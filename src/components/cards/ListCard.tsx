@@ -36,51 +36,70 @@ export function ListCard({
 	const isSmall = size === "small";
 
 	return (
-		<Card>
-			<div className="relative">
-				<div className={`flex flex-col items-center ${!isSmall ? "mb-2" : ""}`}>
-					{icon && iconDecoration && (
-						<IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
-					)}
-					<Heading
-						level={!isSmall ? 3 : 5}
-						className={isSmall ? "text-center md:text-left w-full" : ""}
+		<Card size={size}>
+			<Card.Body>
+				<div className="relative">
+					<div
+						className={`flex flex-row items-center ${!isSmall ? "mb-2" : ""}`}
 					>
-						{title}
-					</Heading>
-				</div>
-				<ul
-					className={
-						isSmall
-							? "flex items-center gap-4 mt-4 w-full justify-center md:justify-start flex-wrap"
-							: listGridStyles({ cols })
-					}
-				>
-					{listItems.map((item, index) => (
-						<li
-							key={index}
-							className={`
-								   ${!isSmall ? "p-3" : ""}
-								   text-center rounded-lg border bg-gradient-to-br transition-all hover:scale-105
-								   text-slate-800 border-red-200 from-red-50 to-pink-50
-								   dark:text-inherit dark:border-cyan-700/30 dark:from-cyan-900/20 dark:to-purple-900/20
-							   `}
+						{icon && iconDecoration && (
+							<Card.Icon>
+								<IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
+							</Card.Icon>
+						)}
+						{!icon && !iconDecoration && (
+							<div className="w-4" aria-hidden="true" />
+						)}
+						<Card.Title>
+							<Heading
+								level={!isSmall ? 3 : 5}
+								className={isSmall ? "w-full" : ""}
+							>
+								{title}
+							</Heading>
+						</Card.Title>
+					</div>
+					<div className="flex flex-row">
+						{!icon && !iconDecoration && (
+							<div className="w-4" aria-hidden="true" />
+						)}
+						<ul
+							className={
+								isSmall
+									? "flex items-center gap-4 mt-4 w-full justify-center md:justify-start flex-wrap"
+									: listGridStyles({ cols })
+							}
 						>
-							{Array.isArray(item) ? (
-								<div className="flex flex-col gap-2">
-									{item.map((sub, i) => (
-										<span key={i} className={i === 0 ? "text-2xl" : "text-sm"}>
-											{sub}
-										</span>
-									))}
-								</div>
-							) : (
-								item
-							)}
-						</li>
-					))}
-				</ul>
-			</div>
+							{listItems.map((item, index) => (
+								<li
+									key={index}
+									className={`
+										   ${!isSmall ? "p-3" : ""}
+										   text-center rounded-lg border bg-gradient-to-br transition-all hover:scale-105
+										   text-slate-800 border-red-200 from-red-50 to-pink-50
+										   dark:text-inherit dark:border-cyan-700/30 dark:from-cyan-900/20 dark:to-purple-900/20
+									   `}
+								>
+									{Array.isArray(item) ? (
+										<div className="flex flex-col gap-2">
+											{item.map((sub, i) => (
+												<span
+													key={i}
+													className={i === 0 ? "text-2xl" : "text-sm"}
+												>
+													{sub}
+												</span>
+											))}
+										</div>
+									) : (
+										item
+									)}
+								</li>
+							))}
+						</ul>
+					</div>
+				</div>
+			</Card.Body>
 		</Card>
 	);
 }
