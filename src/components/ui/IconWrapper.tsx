@@ -28,8 +28,8 @@ const iconWrapperStyles = tv({
 			hexagon: "mr-1.5",
 			beatingCircle: "mr-3 min-w-12 min-h-12",
 			dashedCircle: "mr-3 min-w-13 min-h-13",
-			outlinedDiamond: "mr-2",
-			miniBeatingCircle: "mr-2",
+			outlinedDiamond: "md:mr-2 mb-2 md:mb-0",
+			miniBeatingCircle: "md:mr-2",
 		},
 	},
 });

@@ -33,7 +33,7 @@ export function DescriptionCard({
 			>
 				{icon && iconDecoration && (
 					<div
-						className={`flex mb-2
+						className={`flex
 							${isSmall ? "justify-center md:items-center" : "items-center"}`}
 					>
 						<IconWrapper decoration={iconDecoration}>{icon}</IconWrapper>
