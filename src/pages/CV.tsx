@@ -1,5 +1,7 @@
+import { useTranslation } from "react-i18next";
 import { Heading } from "../components/ui/Heading";
 import Card from "../components/ui/Card";
+import { Fragment } from "react";
 import UserIcon from "../assets/icons/user.svg?react";
 import BracketsIcon from "../assets/icons/brackets.svg?react";
 import BriefcaseIcon from "../assets/icons/briefcase.svg?react";
@@ -7,6 +9,28 @@ import HeartIcon from "../assets/icons/heart.svg?react";
 import GraduationCapIcon from "../assets/icons/graduation-cap.svg?react";
 
 export function CV({ lang }: { lang: "FR" | "EN" }) {
+  const { t } = useTranslation();
+
+  const experience = t("cv.cards.experience.entries", {
+    returnObjects: true,
+  }) as {
+    title: string;
+    organization: string;
+    period: string;
+    description: string;
+  }[];
+  const formations = t("cv.cards.formations.entries", {
+    returnObjects: true,
+  }) as {
+    title: string;
+    organization: string;
+    period: string;
+    description: string[];
+  }[];
+  const interests = t("cv.cards.interests.items", {
+    returnObjects: true,
+  }) as string[];
+
   return (
     <>
       <Heading level={2} variant="gradient" className="mb-12">
@@ -17,24 +41,16 @@ export function CV({ lang }: { lang: "FR" | "EN" }) {
         <Card.Description
           icon={<UserIcon />}
           iconDecoration="filledDiamond"
-          title={lang === "FR" ? "À propos" : "About"}
+          title={t("cv.cards.about.title")}
           description={
-            lang === "FR"
-              ? [
-                  "Je suis un développeur spécialisé dans le développement full-stack avec React + TypeScript + TailwindCSS. Je cherche toujours à me dépasser pour proposer le meilleur résultat possible à mes clients.",
-                  "N'hésitez pas à me contacter pour toute demande professionnelle !",
-                ]
-              : [
-                  "I am a developer specialized in full-stack development with React + TypeScript + TailwindCSS. I always strive to exceed expectations to deliver the best possible results to my clients.",
-                  "Feel free to contact me for any professional inquiries!",
-                ]
+            t("cv.cards.about.description", { returnObjects: true }) as string[]
           }
         />
 
         <Card.List
           icon={<BracketsIcon />}
           iconDecoration="glitchedSquare"
-          title={lang === "FR" ? "Compétences" : "Skills"}
+          title={t("cv.cards.skills.title")}
           listItems={[
             "React",
             "TypeScript",
@@ -48,31 +64,20 @@ export function CV({ lang }: { lang: "FR" | "EN" }) {
         <Card.Timeline
           icon={<BriefcaseIcon />}
           iconDecoration="hexagon"
-          title={
-            lang === "FR"
-              ? "Expériences professionnelles"
-              : "Professional Experience"
-          }
-          entries={[
-            {
-              title: lang === "FR" ? "Stagiaire" : "Intern",
-              organization: "MayetSoft",
-              period: "2026",
-              description:
-                lang === "FR" ? (
-                  <>
-                    Développement de mini-jeux autour du rythme, de l’harmonie
-                    et de la mélodie, en s’appuyant sur l’architecture existante
-                    sous PixiJS.
-                  </>
-                ) : (
-                  <>
-                    Development of mini-games focused on rhythm, harmony, and
-                    melody, leveraging the existing architecture under PixiJS.
-                  </>
-                ),
-            },
-          ]}
+          title={t("cv.cards.experience.title")}
+          entries={experience.map((exp) => ({
+            title: exp.title,
+            organization: exp.organization,
+            period: exp.period,
+            description: Array.isArray(exp.description)
+              ? exp.description.filter(Boolean).map((desc, i, arr) => (
+                  <Fragment key={i}>
+                    {desc}
+                    {i < arr.length - 1 && <br />}
+                  </Fragment>
+                ))
+              : exp.description || "",
+          }))}
         />
 
         <Card.List
@@ -80,10 +85,10 @@ export function CV({ lang }: { lang: "FR" | "EN" }) {
           iconDecoration="beatingCircle"
           title={lang === "FR" ? "Centres d'intérêts" : "Interests"}
           listItems={[
-            ["👺", lang === "FR" ? "Culture japonaise" : "Japanese culture"],
-            ["🎮", lang === "FR" ? "Jeux vidéo" : "Video games"],
-            ["💻", lang === "FR" ? "Informatique" : "Computing"],
-            ["🎤", lang === "FR" ? "Chant" : "Singing"],
+            ["👺", interests[0]],
+            ["🎮", interests[1]],
+            ["💻", interests[2]],
+            ["🎤", interests[3]],
           ]}
           cols={4}
         />
@@ -92,48 +97,19 @@ export function CV({ lang }: { lang: "FR" | "EN" }) {
           icon={<GraduationCapIcon />}
           iconDecoration="dashedCircle"
           title="Formations"
-          entries={[
-            {
-              title:
-                lang === "FR" ? "Bacalauréat Général" : "General Baccalaureate",
-              organization:
-                lang === "FR"
-                  ? "Lycée Théodore de Banville"
-                  : "Théodore de Banville High School",
-              period: "2021-2024",
-              description:
-                lang === "FR" ? (
-                  <>
-                    Spécialité Numérique et Sciences Informatiques et
-                    Mathématiques
-                    <br />+ Option Maths Expertes
-                  </>
-                ) : (
-                  <>
-                    Specialization in Digital and Computer Sciences and
-                    Mathematics
-                    <br />+ Expert Maths Option
-                  </>
-                ),
-            },
-            {
-              title:
-                lang === "FR"
-                  ? "BUT Métiers du Multimédia et de l'Internet"
-                  : "Bachelor's Degree in Multimedia and Internet Professions",
-              organization:
-                lang === "FR"
-                  ? "Université Clermont Auvergne"
-                  : "Clermont Auvergne University",
-              period: "2024-2027",
-              description:
-                lang === "FR" ? (
-                  <>Parcours Développement Web et Dispositifs Interactifs</>
-                ) : (
-                  <>Web Development and Interactive Devices Track</>
-                ),
-            },
-          ]}
+          entries={formations.map((formation) => ({
+            title: formation.title,
+            organization: formation.organization,
+            period: formation.period,
+            description: Array.isArray(formation.description)
+              ? formation.description.filter(Boolean).map((desc, i, arr) => (
+                  <Fragment key={i}>
+                    {desc}
+                    {i < arr.length - 1 && <br />}
+                  </Fragment>
+                ))
+              : formation.description || "",
+          }))}
         />
       </div>
     </>

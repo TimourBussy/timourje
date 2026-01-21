@@ -1,0 +1,61 @@
+{
+  "home": {
+    "subtitle": "Full-Stack Developer",
+    "cards": {
+      "cv": {
+        "description": "Discover my background, skills and professional experiences!"
+      },
+      "portfolio": {
+        "description": "Explore my projects and creative achievements!"
+      }
+    }
+  },
+  "cv": {
+    "cards": {
+      "about": {
+        "title": "About",
+        "description": [
+          "I am a developer specialized in full-stack development with React + TypeScript + TailwindCSS. I always strive to exceed expectations to deliver the best possible results to my clients.",
+          "Feel free to contact me for any professional inquiries!"
+        ]
+      },
+      "skills": {
+        "title": "Skills"
+      },
+      "experience": {
+        "title": "Professional Experience",
+        "entries": [
+          {
+            "title": "Intern",
+            "organization": "MayetSoft",
+            "period": "2026",
+            "description": "Development of mini-games focused on rhythm, harmony, and melody, leveraging the existing architecture under PixiJS."
+          }
+        ]
+      },
+      "interests": {
+        "title": "Interests",
+        "items": ["Japanese culture", "Video games", "Computing", "Singing"]
+      },
+      "formations": {
+        "entries": [
+          {
+            "title": "General Baccalaureate",
+            "organization": "Théodore de Banville High School",
+            "period": "2021-2024",
+            "description": [
+              "Specialization in Digital and Computer Sciences and Mathematics",
+              "+ Expert Mathematics Option"
+            ]
+          },
+          {
+            "title": "Bachelor's Degree in Multimedia and Internet Professions",
+            "organization": "Clermont Auvergne University",
+            "period": "2024-2027",
+            "description": ["Web Development and Interactive Devices Track"]
+          }
+        ]
+      }
+    }
+  }
+}

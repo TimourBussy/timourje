@@ -80,9 +80,6 @@ function Description({
   description,
   size = "big",
 }: CardDescriptionProps) {
-  const descriptionArray = Array.isArray(description)
-    ? description
-    : [description];
   const isSmall = size === "small";
   return (
     <BaseCard size={size}>
@@ -109,11 +106,15 @@ function Description({
               {title}
             </Heading>
           )}
-          {descriptionArray.map((desc, i) => (
-            <Paragraph key={i} size={size}>
-              {desc}
-            </Paragraph>
-          ))}
+          {Array.isArray(description) ? (
+            description.map((desc, i) => (
+              <Paragraph key={i} className={i > 0 ? "mt-4" : ""}>
+                {desc}
+              </Paragraph>
+            ))
+          ) : (
+            <Paragraph>{description}</Paragraph>
+          )}
         </div>
       </div>
     </BaseCard>
@@ -175,7 +176,7 @@ function List({
                   key={index}
                   className={`
 										${!isSmall ? "p-3" : ""}
-										text-center rounded-lg border bg-gradient-to-br transition-all hover:scale-105
+										text-center rounded-lg border cursor-default bg-gradient-to-br transition-all hover:scale-105
 										text-slate-800 border-red-200 from-red-50 to-pink-50
 										dark:text-inherit dark:border-cyan-700/30 dark:from-cyan-900/20 dark:to-purple-900/20
 									`}

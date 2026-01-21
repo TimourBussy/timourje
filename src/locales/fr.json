@@ -1,0 +1,63 @@
+{
+  "home": {
+    "subtitle": "Développeur Full-Stack",
+    "cards": {
+      "cv": {
+        "description": "Découvrez mon parcours, mes compétences et mes expériences professionnelles !"
+      },
+      "portfolio": {
+        "description": "Explorez mes projets et réalisations créatives !"
+      }
+    }
+  },
+  "cv": {
+    "cards": {
+      "about": {
+        "title": "À propos",
+        "description": [
+          "Je suis un développeur spécialisé dans le développement full-stack avec React + TypeScript + TailwindCSS. Je cherche toujours à me dépasser pour proposer le meilleur résultat possible à mes clients.",
+          "N'hésitez pas à me contacter pour toute demande professionnelle !"
+        ]
+      },
+      "skills": {
+        "title": "Compétences"
+      },
+      "experience": {
+        "title": "Expériences Professionnelles",
+        "entries": [
+          {
+            "title": "Stagiaire",
+            "organization": "MayetSoft",
+            "period": "2026",
+            "description": "Développement de mini-jeux autour du rythme, de l’harmonie et de la mélodie, en s’appuyant sur l’architecture existante sous PixiJS."
+          }
+        ]
+      },
+      "interests": {
+        "title": "Centres d'intérêt",
+        "items": ["Culture japonaise", "Jeux vidéo", "Informatique", "Chant"]
+      },
+      "formations": {
+        "entries": [
+          {
+            "title": "Bacalauréat Général",
+            "organization": "Lycée Théodore de Banville",
+            "period": "2021-2024",
+            "description": [
+              "Spécialité Numérique et Sciences Informatiques et Mathématiques",
+              "+ Option Mathématiques Expertes"
+            ]
+          },
+          {
+            "title": "BUT Métiers du Multimédia et de l'Internet",
+            "organization": "Université Clermont Auvergne",
+            "period": "2024-2027",
+            "description": [
+              "Parcours Développement Web et Dispositifs Interactifs"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
