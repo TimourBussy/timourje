@@ -2,11 +2,11 @@ import { useTranslation } from "react-i18next";
 import { Heading } from "../components/ui/Heading";
 import Card from "../components/ui/Card";
 import { Fragment } from "react";
-import UserIcon from "../assets/icons/user.svg?react";
-import BracketsIcon from "../assets/icons/brackets.svg?react";
-import BriefcaseIcon from "../assets/icons/briefcase.svg?react";
-import HeartIcon from "../assets/icons/heart.svg?react";
-import GraduationCapIcon from "../assets/icons/graduation-cap.svg?react";
+import UserIcon from "../icons/user.svg?react";
+import BracketsIcon from "../icons/brackets.svg?react";
+import BriefcaseIcon from "../icons/briefcase.svg?react";
+import HeartIcon from "../icons/heart.svg?react";
+import GraduationCapIcon from "../icons/graduation-cap.svg?react";
 
 export function CV({ lang }: { lang: "FR" | "EN" }) {
   const { t } = useTranslation();

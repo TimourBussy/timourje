@@ -1,11 +1,21 @@
+import { useTranslation } from "react-i18next";
 import Card from "../components/ui/Card";
 import { Heading } from "../components/ui/Heading";
 import { Paragraph } from "../components/ui/Paragraph";
 import { Button } from "../components/ui/Button";
-import { projects } from "../data/projects";
-import ExternalLinkIcon from "../assets/icons/external-link.svg?react";
+import ExternalLinkIcon from "../icons/external-link.svg?react";
 
 export function Portfolio({ lang }: { lang: "FR" | "EN" }) {
+  const { t } = useTranslation();
+
+  const projects = t("portfolio.cards", { returnObjects: true }) as {
+    title: string;
+    description: string;
+    tags?: string[];
+    img: { src: string; alt: string };
+    url: string;
+  }[];
+
   return (
     <>
       <Heading level={2} variant="gradient">
@@ -19,12 +29,8 @@ export function Portfolio({ lang }: { lang: "FR" | "EN" }) {
 
       <div className="flex flex-col gap-6 mt-8 mb-12 px-4 sm:px-6 md:px-16 lg:px-32 xl:px-70 box-border">
         {projects.map((project, index) => {
-          const title =
-            typeof project.title === "string"
-              ? project.title
-              : project.title[lang];
-          const imagePosition =
-            project.imagePosition || (index % 2 === 0 ? "left" : "right");
+          const { title, description, tags, img, url } = project;
+          const imagePosition = index % 2 === 0 ? "right" : "left";
           return (
             <Card key={index} className="!p-0 overflow-hidden">
               <div className="flex flex-col xl:flex-row h-full">
@@ -34,19 +40,8 @@ export function Portfolio({ lang }: { lang: "FR" | "EN" }) {
                   }`}
                 >
                   <img
-                    src={
-                      project.imageSrc ||
-                      `src/assets/images/project${index + 1}.webp`
-                    }
-                    alt={
-                      project.imageAlt
-                        ? typeof project.imageAlt === "string"
-                          ? project.imageAlt
-                          : project.imageAlt[lang]
-                        : lang === "FR"
-                          ? `Aperçu du projet "${title}"`
-                          : `Preview of the "${title}" project`
-                    }
+                    src={`/images/${img.src}`}
+                    alt={img.alt}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -76,14 +71,12 @@ export function Portfolio({ lang }: { lang: "FR" | "EN" }) {
                   <Heading level={3}>{title}</Heading>
 
                   <Paragraph size="small" className="mb-2">
-                    {typeof project.description === "string"
-                      ? project.description
-                      : project.description[lang]}
+                    {description}
                   </Paragraph>
 
-                  {project.tags && (
+                  {tags && (
                     <ul className="flex flex-wrap gap-2 mb-2">
-                      {project.tags.map((tag, tagIndex) => (
+                      {tags.map((tag, tagIndex) => (
                         <li
                           key={tagIndex}
                           className="
@@ -92,27 +85,14 @@ export function Portfolio({ lang }: { lang: "FR" | "EN" }) {
 																  dark:text-cyan-300 dark:border-cyan-700/30 dark:from-cyan-900/20 dark:to-purple-900/20
 															  "
                         >
-                          {Array.isArray(tag) ? (
-                            <div className="flex flex-col gap-2">
-                              {tag.map((item, i) => (
-                                <span
-                                  key={i}
-                                  className={i === 0 ? "text-2xl" : "text-sm"}
-                                >
-                                  {item}
-                                </span>
-                              ))}
-                            </div>
-                          ) : (
-                            tag
-                          )}
+                          {tag}
                         </li>
                       ))}
                     </ul>
                   )}
 
                   <Button
-                    href={project.projectUrl}
+                    href={url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="

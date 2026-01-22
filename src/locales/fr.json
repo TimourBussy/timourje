@@ -59,5 +59,19 @@
         ]
       }
     }
+  },
+  "portfolio": {
+    "cards": [
+      {
+        "title": "YAMSY",
+        "description": "Application web permettant de jouer au Yams (Yahtzee) de 1 à 4 joueurs en mode \"hot seat\"",
+        "tags": ["HTML", "CSS", "PHP", "JavaScript"],
+        "img": {
+          "src": "project_yamsy.webp",
+          "alt": "Capture d'écran du projet YAMSY."
+        },
+        "url": "https://scep.prox.dsi.uca.fr/vm-iutvy-mmiweb-68/yamsy/"
+      }
+    ]
   }
 }

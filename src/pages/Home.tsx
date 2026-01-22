@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import { Heading } from "../components/ui/Heading";
 import { Paragraph } from "../components/ui/Paragraph";
 import Card from "../components/ui/Card";
-import DocumentIcon from "../assets/icons/document.svg?react";
-import BriefcaseIcon from "../assets/icons/briefcase.svg?react";
+import DocumentIcon from "../icons/document.svg?react";
+import BriefcaseIcon from "../icons/briefcase.svg?react";
 
 export function Home() {
   const { t } = useTranslation();

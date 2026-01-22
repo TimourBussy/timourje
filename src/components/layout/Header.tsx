@@ -1,9 +1,9 @@
 import { NavItem } from "../ui/NavItem";
 import { HeaderAction } from "../ui/HeaderAction";
 import { useTranslation } from "react-i18next";
-import LanguageIcon from "../../assets/icons/language.svg?react";
-import SunIcon from "../../assets/icons/sun.svg?react";
-import MoonIcon from "../../assets/icons/moon.svg?react";
+import LanguageIcon from "../../icons/language.svg?react";
+import SunIcon from "../../icons/sun.svg?react";
+import MoonIcon from "../../icons/moon.svg?react";
 
 export function Header({
   isDark,

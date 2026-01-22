@@ -6,9 +6,9 @@ import { Input } from "../components/ui/Input";
 import { FieldBox } from "../components/ui/FieldBox";
 import { Button } from "../components/ui/Button";
 import emailjs from "@emailjs/browser";
-import MailIcon from "../assets/icons/mail.svg?react";
-import PhoneIcon from "../assets/icons/phone.svg?react";
-import SendIcon from "../assets/icons/send.svg?react";
+import MailIcon from "../icons/mail.svg?react";
+import PhoneIcon from "../icons/phone.svg?react";
+import SendIcon from "../icons/send.svg?react";
 
 export function Contact({ lang }: { lang: "FR" | "EN" }) {
   const form = useRef<HTMLFormElement>(null);
