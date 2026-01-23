@@ -1,77 +1,112 @@
 {
-  "home": {
-    "subtitle": "Développeur Full-Stack",
-    "cards": {
-      "cv": {
-        "description": "Découvrez mon parcours, mes compétences et mes expériences professionnelles !"
-      },
-      "portfolio": {
-        "description": "Explorez mes projets et réalisations créatives !"
-      }
-    }
-  },
-  "cv": {
-    "cards": {
-      "about": {
-        "title": "À propos",
-        "description": [
-          "Je suis un développeur spécialisé dans le développement full-stack avec React + TypeScript + TailwindCSS. Je cherche toujours à me dépasser pour proposer le meilleur résultat possible à mes clients.",
-          "N'hésitez pas à me contacter pour toute demande professionnelle !"
-        ]
-      },
-      "skills": {
-        "title": "Compétences"
-      },
-      "experience": {
-        "title": "Expériences Professionnelles",
-        "entries": [
-          {
-            "title": "Stagiaire",
-            "organization": "MayetSoft",
-            "period": "2026",
-            "description": "Développement de mini-jeux autour du rythme, de l’harmonie et de la mélodie, en s’appuyant sur l’architecture existante sous PixiJS."
-          }
-        ]
-      },
-      "interests": {
-        "title": "Centres d'intérêt",
-        "items": ["Culture japonaise", "Jeux vidéo", "Informatique", "Chant"]
-      },
-      "formations": {
-        "entries": [
-          {
-            "title": "Bacalauréat Général",
-            "organization": "Lycée Théodore de Banville",
-            "period": "2021-2024",
-            "description": [
-              "Spécialité Numérique et Sciences Informatiques et Mathématiques",
-              "+ Option Mathématiques Expertes"
-            ]
-          },
-          {
-            "title": "BUT Métiers du Multimédia et de l'Internet",
-            "organization": "Université Clermont Auvergne",
-            "period": "2024-2027",
-            "description": [
-              "Parcours Développement Web et Dispositifs Interactifs"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "portfolio": {
-    "cards": [
-      {
-        "title": "YAMSY",
-        "description": "Application web permettant de jouer au Yams (Yahtzee) de 1 à 4 joueurs en mode \"hot seat\"",
-        "tags": ["HTML", "CSS", "PHP", "JavaScript"],
-        "img": {
-          "src": "project_yamsy.webp",
-          "alt": "Capture d'écran du projet YAMSY."
-        },
-        "url": "https://scep.prox.dsi.uca.fr/vm-iutvy-mmiweb-68/yamsy/"
-      }
-    ]
-  }
+	"home": {
+		"subtitle": "Développeur Full-Stack",
+		"cards": {
+			"cv": {
+				"description": "Découvrez mon parcours, mes compétences et mes expériences professionnelles !"
+			},
+			"portfolio": {
+				"description": "Explorez mes projets et réalisations créatives !"
+			}
+		}
+	},
+	"cv": {
+		"cards": {
+			"about": {
+				"title": "À propos",
+				"description": [
+					"Je suis un développeur spécialisé dans le développement full-stack avec React + TypeScript + TailwindCSS. Je cherche toujours à me dépasser pour proposer le meilleur résultat possible à mes clients.",
+					"N'hésitez pas à me contacter pour toute demande professionnelle !"
+				]
+			},
+			"skills": {
+				"title": "Compétences"
+			},
+			"experience": {
+				"title": "Expériences Professionnelles",
+				"entries": [
+					{
+						"title": "Stagiaire",
+						"organization": "MayetSoft",
+						"period": "2026",
+						"description": "Développement de mini-jeux autour du rythme, de l’harmonie et de la mélodie, en s’appuyant sur l’architecture existante sous PixiJS."
+					}
+				]
+			},
+			"interests": {
+				"title": "Centres d'intérêt",
+				"items": ["Culture japonaise", "Jeux vidéo", "Informatique", "Chant"]
+			},
+			"formations": {
+				"entries": [
+					{
+						"title": "Bacalauréat Général",
+						"organization": "Lycée Théodore de Banville",
+						"period": "2021-2024",
+						"description": [
+							"Spécialité Numérique et Sciences Informatiques et Mathématiques",
+							"+ Option Mathématiques Expertes"
+						]
+					},
+					{
+						"title": "BUT Métiers du Multimédia et de l'Internet",
+						"organization": "Université Clermont Auvergne",
+						"period": "2024-2027",
+						"description": [
+							"Parcours Développement Web et Dispositifs Interactifs"
+						]
+					}
+				]
+			}
+		}
+	},
+	"portfolio": {
+		"projectId": "Projet",
+		"projects": [
+			{
+				"title": "YAMSY",
+				"description": "Application web permettant de jouer au Yams (Yahtzee) de 1 à 4 joueurs en mode \"hot seat\".",
+				"tags": ["HTML", "CSS", "PHP", "JavaScript"],
+				"img": {
+					"src": "project_yamsy.webp",
+					"alt": "Capture d'écran du projet YAMSY."
+				},
+				"url": "https://scep.prox.dsi.uca.fr/vm-iutvy-mmiweb-68/yamsy/"
+			}
+		],
+		"viewProject": "Voir le projet"
+	},
+	"contact": {
+		"subtitle": "N'hésitez pas à me contacter !",
+		"cards": {
+			"phone": "Téléphone",
+			"socials": "Réseaux Sociaux",
+			"form": {
+				"title": "Envoyez-moi un message",
+				"name": {
+					"label": "Nom",
+					"placeholder": "Votre nom"
+				},
+				"email": {
+					"placeholder": "votre.email@exemple.com"
+				},
+				"subject": {
+					"label": "Sujet",
+					"placeholder": "Sujet de votre message"
+				},
+				"message": {
+					"label": "Message",
+					"placeholder": "Votre message..."
+				},
+				"button": {
+					"send": "Envoyer",
+					"sending": "Envoi en cours..."
+				},
+				"validation": {
+					"success": "Merci, votre message a été envoyé avec succès !",
+					"error": "Erreur lors de l'envoi, réessayez plus tard."
+				}
+			}
+		}
+	}
 }
