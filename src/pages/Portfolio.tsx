@@ -78,7 +78,7 @@ export function Portfolio() {
 												<li
 													key={tagIndex}
 													className="
-																  px-3 py-1 text-sm text-center rounded-full cursor-default border bg-gradient-to-br transition-all hover:scale-105
+																  px-3 py-1 text-sm text-center rounded-full cursor-default border bg-linear-to-br transition-all hover:scale-105
 																  text-red-600 border-red-200 from-red-50 to-pink-50
 																  dark:text-cyan-300 dark:border-cyan-700/30 dark:from-cyan-900/20 dark:to-purple-900/20
 															  "

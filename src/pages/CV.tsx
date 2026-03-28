@@ -8,7 +8,7 @@ import BriefcaseIcon from "../icons/briefcase.svg?react";
 import HeartIcon from "../icons/heart.svg?react";
 import GraduationCapIcon from "../icons/graduation-cap.svg?react";
 
-export function CV({ lang }: { lang: "FR" | "EN" }) {
+export function CV() {
   const { t } = useTranslation();
 
   const experience = t("cv.cards.experience.entries", {
@@ -83,13 +83,8 @@ export function CV({ lang }: { lang: "FR" | "EN" }) {
         <Card.List
           icon={<HeartIcon />}
           iconDecoration="beatingCircle"
-          title={lang === "FR" ? "Centres d'intérêts" : "Interests"}
-          listItems={[
-            ["👺", interests[0]],
-            ["🎮", interests[1]],
-            ["💻", interests[2]],
-            ["🎤", interests[3]],
-          ]}
+          title={t("cv.cards.interests.title")}
+          listItems={interests.map(([icon, label]) => [icon, label])}
           cols={4}
         />
 

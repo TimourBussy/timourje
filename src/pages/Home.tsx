@@ -18,7 +18,7 @@ export function Home() {
       </Paragraph>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-md md:max-w-5xl px-4 grid-rows-2 md:grid-rows-1 mb-14 box-border">
-        <a href="CV">
+        <a href="cv">
           <Card.Home
             icon={<DocumentIcon height="28px" />}
             iconDecoration="circles"
@@ -27,7 +27,7 @@ export function Home() {
           />
         </a>
 
-        <a href="Portfolio">
+        <a href="portfolio">
           <Card.Home
             icon={<BriefcaseIcon height="36px" />}
             iconDecoration="haloSquare"
