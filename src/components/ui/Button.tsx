@@ -22,7 +22,7 @@ export const Button = forwardRef<
 	const { children, className = "", ...rest } = props;
 
 	const baseStyle =
-		"px-6 py-3 rounded-lg text-base text-white font-medium flex items-center self-center gap-2.5 text-center cursor-default bg-gradient-to-r transition-transform hover:scale-105 from-red-500 to-pink-500 dark:from-cyan-500 dark:to-purple-500 " +
+		"px-6 py-3 rounded-lg text-base text-white font-medium flex items-center self-center gap-2.5 text-center cursor-default bg-linear-to-r transition-transform hover:scale-105 from-red-500 to-pink-500 dark:from-cyan-500 dark:to-purple-500 " +
 		className;
 
 	if ("href" in props && props.href) {

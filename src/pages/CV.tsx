@@ -37,7 +37,7 @@ export function CV() {
         Curriculum Vitae
       </Heading>
 
-      <div className="flex flex-col gap-12 max-w-screen-xl box-border px-4 sm:px-6 md:px-16 lg:px-32 xl:px-40 mb-24">
+      <div className="flex flex-col gap-12 max-w-7xl box-border px-4 sm:px-6 md:px-16 lg:px-32 xl:px-40 mb-24">
         <Card.Description
           icon={<UserIcon />}
           iconDecoration="filledDiamond"

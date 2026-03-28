@@ -89,7 +89,7 @@ export function IconWrapper({
           <div className="absolute -inset-2 flex items-center justify-center pointer-events-none">
             <div
               className="
-								w-18 h-18 aspect-square w-full h-full rotate-45 opacity-20 blur bg-gradient-to-r transition-opacity group-hover:opacity-40
+								aspect-square w-full h-full rotate-45 opacity-20 blur bg-linear-to-r transition-opacity group-hover:opacity-40
 								from-red-500 via-pink-500 to-purple-500
 								dark:from-cyan-500 dark:via-purple-500 dark:to-pink-500"
             />
@@ -126,7 +126,7 @@ export function IconWrapper({
         <>
           <div
             className="
-							absolute -inset-2 opacity-30 blur-md bg-gradient-to-r
+							absolute -inset-2 opacity-30 blur-md bg-linear-to-r
 							from-red-500 to-pink-500
 							dark:from-cyan-500 dark:to-purple-500"
           />
